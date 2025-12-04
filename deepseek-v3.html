@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek V3 & R1 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into DeepSeek V3 and R1: Specs, API usage guide, and industry adoption in healthcare and finance.">
+    <meta property="og:title" content="DeepSeek V3 & R1 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into DeepSeek V3 and R1: Specs, API usage guide, and industry adoption in healthcare and finance.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/deepseek-v3.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge deepseek">DeepSeek AI</span>
+            <h1>DeepSeek V3 & R1</h1>
+            <p class="subtitle">Innovative Mixture-of-Experts (MoE) models redefining efficiency and reasoning capabilities.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> DeepSeek AI</li>
+                    <li><strong>Release Date:</strong> Dec 2024 (V3), Jan 2025 (R1)</li>
+                    <li><strong>Parameters:</strong> 671B Total (37B Active)</li>
+                    <li><strong>Context Window:</strong> 131k tokens</li>
+                    <li><strong>License:</strong> Open Source (MIT/Apache 2.0 compatible)</li>
+                    <li><strong>Key Capabilities:</strong> Advanced Reasoning (R1), Coding, Math, Multi-Token Prediction</li>
+                </ul>
+                <p class="summary">
+                    DeepSeek V3 utilizes a massive Mixture-of-Experts architecture to deliver top-tier performance with surprising efficiency. The R1 model specifically targets complex reasoning tasks, achieving state-of-the-art results on math and logic benchmarks.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Interact with DeepSeek V3 using the OpenAI SDK (API compatible).</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">from openai import OpenAI
+
+# Initialize client (points to DeepSeek API or local vLLM instance)
+client = OpenAI(
+    api_key="YOUR_API_KEY", 
+    base_url="https://api.deepseek.com/v1"
+)
+
+response = client.chat.completions.create(
+    model="deepseek-chat",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Solve this calculus problem: integral of x^2 dx"},
+    ],
+    stream=False
+)
+
+print(response.choices[0].message.content)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Healthcare</h3>
+                        <p>Used for analyzing patient data and identifying treatment patterns, reportedly reducing diagnosis time by 40% in some networks.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Finance</h3>
+                        <p>Deployed for risk assessment and fraud detection, monitoring transaction patterns with high accuracy.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Education</h3>
+                        <p>Powers adaptive learning platforms to analyze student performance and tailor complex math and science materials.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llama 3.1 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Llama 3.1: Specs, Hello World code guide, and industry usage case studies.">
+    <meta property="og:title" content="Llama 3.1 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Llama 3.1: Specs, Hello World code guide, and industry usage case studies.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/llama-3-1.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge meta">Meta AI</span>
+            <h1>Llama 3.1</h1>
+            <p class="subtitle">The open-source standard for general-purpose AI, scaling from 8B to 405B parameters.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Meta AI</li>
+                    <li><strong>Release Date:</strong> July 2024</li>
+                    <li><strong>Parameters:</strong> 8B, 70B, 405B</li>
+                    <li><strong>Context Window:</strong> 128k tokens</li>
+                    <li><strong>License:</strong> Llama 3.1 Community License</li>
+                    <li><strong>Key Capabilities:</strong> Multilingual, Reasoning, Coding, Tool Use</li>
+                </ul>
+                <p class="summary">
+                    Llama 3.1 represents a significant leap in open-source AI, offering performance comparable to top-tier closed models like GPT-4o. The 405B model is the largest open-weights model to date, enabling synthetic data generation and model distillation.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Get started with Llama 3.1 using the Hugging Face <code>transformers</code> library.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">import torch
+from transformers import pipeline
+
+model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+
+pipe = pipeline(
+    "text-generation",
+    model=model_id,
+    model_kwargs={"torch_dtype": torch.bfloat16},
+    device_map="auto",
+)
+
+messages = [
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Hello! Can you explain quantum computing in one sentence?"},
+]
+
+outputs = pipe(
+    messages,
+    max_new_tokens=256,
+)
+
+print(outputs[0]["generated_text"][-1])
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Zoom</h3>
+                        <p>Uses Llama models to power its AI Companion, summarizing meetings and drafting emails for millions of users.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Shopify</h3>
+                        <p>Integrates Llama into its sidekick assistant to help merchants manage their stores and answer queries.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>AT&T</h3>
+                        <p>Fine-tunes Llama for customer support, improving response times and accuracy in handling client requests.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

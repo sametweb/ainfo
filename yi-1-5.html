@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yi-1.5 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Yi-1.5: 01.AI's bilingual powerhouse.">
+    <meta property="og:title" content="Yi-1.5 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Yi-1.5: 01.AI's bilingual powerhouse.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/yi-1-5.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge yi">01.AI</span>
+            <h1>Yi-1.5</h1>
+            <p class="subtitle">The bilingual master, delivering exceptional performance in both English and Chinese.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> 01.AI</li>
+                    <li><strong>Release Date:</strong> May 2024</li>
+                    <li><strong>Parameters:</strong> 6B, 9B, 34B</li>
+                    <li><strong>Context Window:</strong> 200k tokens (some variants)</li>
+                    <li><strong>License:</strong> Apache 2.0</li>
+                    <li><strong>Key Capabilities:</strong> Bilingual (En/Zh), Coding, Math, Long Context</li>
+                </ul>
+                <p class="summary">
+                    Yi-1.5 is a robust upgrade to the original Yi series. It maintains the strong bilingual capabilities while significantly boosting coding and math performance, making it a versatile choice for global applications.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run Yi-1.5 with <code>transformers</code>.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_path = "01-ai/Yi-1.5-34B-Chat"
+
+tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
+model = AutoModelForCausalLM.from_pretrained(
+    model_path, 
+    device_map="auto", 
+    torch_dtype="auto"
+)
+
+messages = [
+    {"role": "user", "content": "Translate 'Hello World' to Chinese and explain the characters."}
+]
+
+input_ids = tokenizer.apply_chat_template(
+    conversation=messages, 
+    tokenize=True, 
+    add_generation_prompt=True, 
+    return_tensors='pt'
+)
+
+output_ids = model.generate(input_ids.to('cuda'), max_new_tokens=200)
+response = tokenizer.decode(output_ids[0][input_ids.shape[1]:], skip_special_tokens=True)
+
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Cross-Border E-commerce</h3>
+                        <p>Essential for platforms operating in both Western and Chinese markets for translation and customer support.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Document Analysis</h3>
+                        <p>Its 200k context window allows for deep analysis of lengthy financial and legal documents.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Coding Assistants</h3>
+                        <p>Strong performance in code generation makes it a viable backend for developer tools.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

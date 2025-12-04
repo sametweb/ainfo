@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ainfo.dev/sitemap.xml

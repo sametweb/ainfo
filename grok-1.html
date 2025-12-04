@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok-1 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Grok-1: xAI's massive MoE model.">
+    <meta property="og:title" content="Grok-1 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Grok-1: xAI's massive MoE model.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/grok-1.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge xai">xAI</span>
+            <h1>Grok-1</h1>
+            <p class="subtitle">The 314B parameter giant with a unique personality and massive knowledge base.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> xAI</li>
+                    <li><strong>Release Date:</strong> March 2024</li>
+                    <li><strong>Parameters:</strong> 314B (MoE)</li>
+                    <li><strong>Context Window:</strong> 8k tokens</li>
+                    <li><strong>License:</strong> Apache 2.0</li>
+                    <li><strong>Key Capabilities:</strong> Creative Writing, General Knowledge, Humor</li>
+                </ul>
+                <p class="summary">
+                    Grok-1 is one of the largest open-weights models available. Its Mixture-of-Experts architecture allows it to be incredibly knowledgeable while maintaining a distinct, engaging personality.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Note: Running Grok-1 locally requires massive VRAM (300GB+). Here is a snippet for loading it if you have the hardware.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python"># Requires JAX and massive hardware resources
+from model import LanguageModelConfig, TransformerConfig, QuantizedWeight8bit
+from runners import ModelRunner
+
+grok_1_model = ModelRunner(
+    model_path="./checkpoints/grok-1",
+    tokenizer_path="./checkpoints/grok-1/tokenizer.model",
+    local_mesh_config=(1, 8),  # 8 GPUs
+    load_format="pickle",
+)
+
+grok_1_model.run_generation_sample(
+    "The answer to life, the universe, and everything is ", 
+    max_len=100, 
+    temperature=0.01
+)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Creative Content</h3>
+                        <p>Used for generating engaging, witty, and creative text formats that differ from standard corporate AI tones.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Research</h3>
+                        <p>A primary subject for studying massive MoE architectures and training dynamics at scale.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Real-time Analysis</h3>
+                        <p>In its closed form, it powers real-time news analysis on X. The open model serves as a base for similar applications.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

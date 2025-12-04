@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistral Large 2 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Mistral Large 2: Specs, usage guide, and enterprise adoption.">
+    <meta property="og:title" content="Mistral Large 2 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Mistral Large 2: Specs, usage guide, and enterprise adoption.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/mistral-large-2.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge mistral">Mistral AI</span>
+            <h1>Mistral Large 2</h1>
+            <p class="subtitle">The European flagship model, delivering top-tier reasoning and multilingual capabilities.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Mistral AI</li>
+                    <li><strong>Release Date:</strong> July 2024</li>
+                    <li><strong>Parameters:</strong> 123B</li>
+                    <li><strong>Context Window:</strong> 128k tokens</li>
+                    <li><strong>License:</strong> Mistral Research License / Commercial</li>
+                    <li><strong>Key Capabilities:</strong> Multilingual (80+ languages), Coding, Function Calling</li>
+                </ul>
+                <p class="summary">
+                    Mistral Large 2 is designed for high-end enterprise use cases. It excels in coding and reasoning tasks while maintaining a relatively compact size for its performance class. Its strong multilingual support makes it a global favorite.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Use the official <code>mistralai</code> Python client.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">import os
+from mistralai.client import MistralClient
+from mistralai.models.chat_completion import ChatMessage
+
+api_key = os.environ["MISTRAL_API_KEY"]
+model = "mistral-large-latest"
+
+client = MistralClient(api_key=api_key)
+
+messages = [
+    ChatMessage(role="user", content="Write a short poem about the Eiffel Tower in French.")
+]
+
+chat_response = client.chat(
+    model=model,
+    messages=messages,
+)
+
+print(chat_response.choices[0].message.content)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Enterprise RAG</h3>
+                        <p>Widely adopted for internal knowledge retrieval systems due to its large context window and precise instruction following.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Code Generation</h3>
+                        <p>Integrated into developer tools to assist with code completion, refactoring, and documentation across multiple languages.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Global Customer Support</h3>
+                        <p>Powers multilingual chatbots for European and global companies, handling complex queries in native languages.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

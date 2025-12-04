@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemma 2 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Gemma 2: Google's lightweight open models.">
+    <meta property="og:title" content="Gemma 2 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Gemma 2: Google's lightweight open models.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/gemma-2.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge google">Google</span>
+            <h1>Gemma 2</h1>
+            <p class="subtitle">State-of-the-art performance in lightweight packages, built on Gemini research.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Google</li>
+                    <li><strong>Release Date:</strong> June 2024</li>
+                    <li><strong>Parameters:</strong> 2B, 9B, 27B</li>
+                    <li><strong>Context Window:</strong> 8k tokens</li>
+                    <li><strong>License:</strong> Gemma Terms of Use</li>
+                    <li><strong>Key Capabilities:</strong> Efficient Inference, Reasoning, Summarization</li>
+                </ul>
+                <p class="summary">
+                    Gemma 2 models punch above their weight class. The 9B and 27B variants offer reasoning capabilities that rival much larger models, making them perfect for deployment on consumer hardware or in cost-sensitive environments.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run Gemma 2 with <code>transformers</code>.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">from transformers import pipeline
+import torch
+
+pipe = pipeline(
+    "text-generation",
+    model="google/gemma-2-9b-it",
+    model_kwargs={"torch_dtype": torch.bfloat16},
+    device_map="auto",
+)
+
+messages = [
+    {"role": "user", "content": "Explain the theory of relativity to a 5-year-old."},
+]
+
+outputs = pipe(
+    messages,
+    max_new_tokens=256,
+)
+
+print(outputs[0]["generated_text"][-1])
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>On-Device AI</h3>
+                        <p>The 2B and 9B models are optimized for running locally on laptops and desktops for privacy-preserving apps.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>RAG Pipelines</h3>
+                        <p>Used as efficient generators in Retrieval-Augmented Generation systems where speed and cost are critical.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Academic Research</h3>
+                        <p>A popular choice for researchers due to its accessible size and strong performance baseline.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

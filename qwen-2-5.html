@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen 2.5 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Qwen 2.5: Specs, Transformers code guide, and industry usage.">
+    <meta property="og:title" content="Qwen 2.5 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Qwen 2.5: Specs, Transformers code guide, and industry usage.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/qwen-2-5.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge qwen">Alibaba Cloud</span>
+            <h1>Qwen 2.5</h1>
+            <p class="subtitle">The versatile multilingual powerhouse, excelling in coding and math.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Alibaba Cloud</li>
+                    <li><strong>Release Date:</strong> Sept 2024</li>
+                    <li><strong>Parameters:</strong> 0.5B to 72B</li>
+                    <li><strong>Context Window:</strong> 128k tokens</li>
+                    <li><strong>License:</strong> Apache 2.0 (mostly)</li>
+                    <li><strong>Key Capabilities:</strong> Multilingual, Coding, Math, Instruction Following</li>
+                </ul>
+                <p class="summary">
+                    Qwen 2.5 is a comprehensive suite of models that rival GPT-4 in many benchmarks, particularly in coding and mathematics. Its strong performance across diverse languages makes it a top choice for global applications.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run Qwen 2.5 locally using Hugging Face <code>transformers</code>.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_name = "Qwen/Qwen2.5-7B-Instruct"
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+prompt = "Write a quick sort algorithm in Python."
+messages = [
+    {"role": "system", "content": "You are a helpful coding assistant."},
+    {"role": "user", "content": prompt}
+]
+
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
+
+generated_ids = model.generate(
+    **model_inputs,
+    max_new_tokens=512
+)
+generated_ids = [
+    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
+]
+
+response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Coding Assistants</h3>
+                        <p>Powering IDE plugins and internal developer tools due to its exceptional grasp of programming languages.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Multilingual Content</h3>
+                        <p>Used by media companies to generate and translate content across Asian and Western languages with high fidelity.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Mobile Applications</h3>
+                        <p>Smaller variants (0.5B, 1.5B, 3B) are deployed on mobile devices for offline AI features.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

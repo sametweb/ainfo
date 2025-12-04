@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phi-4 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Phi-4: Microsoft's powerful small language model.">
+    <meta property="og:title" content="Phi-4 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Phi-4: Microsoft's powerful small language model.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/phi-4.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge microsoft">Microsoft</span>
+            <h1>Phi-4</h1>
+            <p class="subtitle">Small but mighty. Exceptional reasoning and coding in a compact 14B package.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Microsoft</li>
+                    <li><strong>Release Date:</strong> Late 2024</li>
+                    <li><strong>Parameters:</strong> 14B</li>
+                    <li><strong>Context Window:</strong> 128k tokens</li>
+                    <li><strong>License:</strong> MIT License</li>
+                    <li><strong>Key Capabilities:</strong> Reasoning, Math, Coding, Safety</li>
+                </ul>
+                <p class="summary">
+                    Phi-4 continues Microsoft's legacy of "textbook quality" data training. Despite its smaller size, it competes with much larger models on reasoning benchmarks, making it a breakthrough for efficient AI.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run Phi-4 with <code>transformers</code>.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_id = "microsoft/phi-4"
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_id, 
+    torch_dtype="auto", 
+    trust_remote_code=True
+)
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+
+inputs = tokenizer("Write a Python function to check for prime numbers.", return_tensors="pt")
+outputs = model.generate(**inputs, max_length=200)
+
+print(tokenizer.batch_decode(outputs)[0])
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Edge Computing</h3>
+                        <p>Ideal for deployment on edge devices and local servers where compute resources are limited.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Mobile Apps</h3>
+                        <p>Can be quantized to run efficiently on high-end smartphones for offline reasoning tasks.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Synthetic Data</h3>
+                        <p>Used to generate high-quality synthetic training data for other models due to its strong reasoning.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command R+ Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Command R+: Cohere's enterprise RAG specialist.">
+    <meta property="og:title" content="Command R+ Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Command R+: Cohere's enterprise RAG specialist.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/command-r-plus.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge cohere">Cohere</span>
+            <h1>Command R+</h1>
+            <p class="subtitle">The enterprise standard for RAG and Tool Use, optimized for business workflows.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Cohere</li>
+                    <li><strong>Release Date:</strong> April 2024</li>
+                    <li><strong>Parameters:</strong> 104B</li>
+                    <li><strong>Context Window:</strong> 128k tokens</li>
+                    <li><strong>License:</strong> CC-BY-NC (Research) / Commercial</li>
+                    <li><strong>Key Capabilities:</strong> RAG, Tool Use, Multilingual (10 languages)</li>
+                </ul>
+                <p class="summary">
+                    Command R+ is purpose-built for real-world enterprise applications. It excels at retrieving information from external sources (RAG) and using tools to automate complex workflows, all while reducing hallucinations with citations.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Interact with Command R+ using the <code>cohere</code> Python client.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">import cohere
+
+# Initialize client with API key
+co = cohere.Client("YOUR_API_KEY")
+
+message = "Search for the latest stock price of Apple and summarize it."
+
+# Example of tool use / RAG capability (simplified)
+response = co.chat(
+    model="command-r-plus",
+    message=message,
+    connectors=[{"id": "web-search"}] # Enables web search tool
+)
+
+print(response.text)
+print("\nCitations:")
+for citation in response.citations:
+    print(citation)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Enterprise Search</h3>
+                        <p>Powers internal search engines that can answer complex questions by synthesizing data from thousands of documents.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Workflow Automation</h3>
+                        <p>Used to build agents that can interact with CRMs, databases, and other business tools to automate tasks.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Financial Analysis</h3>
+                        <p>Leveraged for analyzing financial reports and market data due to its high accuracy and citation features.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
