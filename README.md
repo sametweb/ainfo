@@ -1,6 +1,6 @@
 # ainfo.dev - Top 10 Open Source LLMs
 
-A premium static site showcasing the top open-source Large Language Models of late 2024 and 2025.
+A premium static site showcasing the top open-source Large Language Models of 2025 and 2026.
 
 ## Features
 
@@ -11,12 +11,12 @@ A premium static site showcasing the top open-source Large Language Models of la
 
 ## Models Covered
 
-1. Llama 3.1
-2. DeepSeek V3 & R1
-3. Mistral Large 2
-4. Qwen 2.5
+1. Llama 4 (Meta AI)
+2. DeepSeek V3.2
+3. Mistral Small 3.1
+4. Qwen 3
 5. GPT-OSS
-6. Gemma 2
+6. Gemma 3
 7. Phi-4
 8. Grok-1
 9. Yi-1.5
@@ -25,3 +25,7 @@ A premium static site showcasing the top open-source Large Language Models of la
 ## Deployment
 
 This site is ready for deployment on GitHub Pages, Vercel, or Netlify.
+
+## Last Updated
+
+January 2026
