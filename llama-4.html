@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Llama 3.1 Details - Top Open Source LLM | ainfo.dev</title>
-    <meta name="description" content="Deep dive into Llama 3.1: Specs, Hello World code guide, and industry usage case studies.">
-    <meta property="og:title" content="Llama 3.1 Details - Top Open Source LLM">
-    <meta property="og:description" content="Deep dive into Llama 3.1: Specs, Hello World code guide, and industry usage case studies.">
+    <title>Llama 4 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Llama 4: Meta's multimodal flagship with Scout and Maverick variants, Hello World code guide, and industry usage.">
+    <meta property="og:title" content="Llama 4 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Llama 4: Meta's multimodal flagship with Scout and Maverick variants.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ainfo.dev/llama-3-1.html">
+    <meta property="og:url" content="https://ainfo.dev/llama-4.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
@@ -28,8 +28,8 @@
         
         <section class="hero-detail">
             <span class="badge meta">Meta AI</span>
-            <h1>Llama 3.1</h1>
-            <p class="subtitle">The open-source standard for general-purpose AI, scaling from 8B to 405B parameters.</p>
+            <h1>Llama 4</h1>
+            <p class="subtitle">Meta's multimodal MoE powerhouse with industry-leading context windows up to 10 million tokens.</p>
         </section>
 
         <div class="content-grid">
@@ -37,26 +37,26 @@
                 <h2>Generic Info</h2>
                 <ul class="specs-list">
                     <li><strong>Publisher:</strong> Meta AI</li>
-                    <li><strong>Release Date:</strong> July 2024</li>
-                    <li><strong>Parameters:</strong> 8B, 70B, 405B</li>
-                    <li><strong>Context Window:</strong> 128k tokens</li>
-                    <li><strong>License:</strong> Llama 3.1 Community License</li>
-                    <li><strong>Key Capabilities:</strong> Multilingual, Reasoning, Coding, Tool Use</li>
+                    <li><strong>Release Date:</strong> April 2025</li>
+                    <li><strong>Models:</strong> Scout (109B/17B active), Maverick (400B/17B active)</li>
+                    <li><strong>Context Window:</strong> 10M tokens (Scout), 1M tokens (Maverick)</li>
+                    <li><strong>License:</strong> Llama 4 Community License</li>
+                    <li><strong>Key Capabilities:</strong> Multimodal (Text + Images), MoE Architecture, Reasoning, Coding</li>
                 </ul>
                 <p class="summary">
-                    Llama 3.1 represents a significant leap in open-source AI, offering performance comparable to top-tier closed models like GPT-4o. The 405B model is the largest open-weights model to date, enabling synthetic data generation and model distillation.
+                    Llama 4 marks Meta's leap into native multimodality with a Mixture-of-Experts architecture. Scout's 10-million token context window is unprecedented for open models, while Maverick delivers frontier performance rivaling GPT-4o and Claude Sonnet. Both models can process images alongside text.
                 </p>
             </section>
 
             <section class="info-card">
                 <h2>Hello World Guide</h2>
-                <p>Get started with Llama 3.1 using the Hugging Face <code>transformers</code> library.</p>
+                <p>Get started with Llama 4 using the Hugging Face <code>transformers</code> library.</p>
                 <div class="code-block">
                     <div class="code-header">Python</div>
                     <pre><code class="language-python">import torch
 from transformers import pipeline
 
-model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+model_id = "meta-llama/Llama-4-Scout-17B-16E-Instruct"
 
 pipe = pipeline(
     "text-generation",
@@ -67,7 +67,7 @@ pipe = pipeline(
 
 messages = [
     {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "Hello! Can you explain quantum computing in one sentence?"},
+    {"role": "user", "content": "Explain quantum entanglement in simple terms."},
 ]
 
 outputs = pipe(
@@ -84,16 +84,16 @@ print(outputs[0]["generated_text"][-1])
                 <h2>Industry Usage</h2>
                 <div class="usage-grid">
                     <div class="usage-item">
-                        <h3>Zoom</h3>
-                        <p>Uses Llama models to power its AI Companion, summarizing meetings and drafting emails for millions of users.</p>
+                        <h3>Long-Context Analysis</h3>
+                        <p>Scout's 10M token context enables analysis of entire codebases or multi-year document archives in a single prompt.</p>
                     </div>
                     <div class="usage-item">
-                        <h3>Shopify</h3>
-                        <p>Integrates Llama into its sidekick assistant to help merchants manage their stores and answer queries.</p>
+                        <h3>Multimodal Applications</h3>
+                        <p>Native image understanding powers visual Q&A, document analysis, and diagram interpretation in enterprise workflows.</p>
                     </div>
                     <div class="usage-item">
-                        <h3>AT&T</h3>
-                        <p>Fine-tunes Llama for customer support, improving response times and accuracy in handling client requests.</p>
+                        <h3>AI Agents</h3>
+                        <p>Maverick's reasoning capabilities and tool-use support make it a top choice for building autonomous AI agents.</p>
                     </div>
                 </div>
             </section>
@@ -102,10 +102,11 @@ print(outputs[0]["generated_text"][-1])
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year">2025</span> ainfo.dev. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+</code></pre>

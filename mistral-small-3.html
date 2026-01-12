@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistral Small 3.1 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Mistral Small 3.1: The efficient 24B model with multimodal capabilities and Apache 2.0 license.">
+    <meta property="og:title" content="Mistral Small 3.1 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Mistral Small 3.1: The efficient 24B model with multimodal capabilities.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/mistral-small-3.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge mistral">Mistral AI</span>
+            <h1>Mistral Small 3.1</h1>
+            <p class="subtitle">The efficiency champion: 24B parameters delivering 3x faster inference than larger models.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Mistral AI</li>
+                    <li><strong>Release Date:</strong> January 2025 (3.0), March 2025 (3.1)</li>
+                    <li><strong>Parameters:</strong> 24B</li>
+                    <li><strong>Context Window:</strong> 128k tokens</li>
+                    <li><strong>License:</strong> Apache 2.0</li>
+                    <li><strong>Key Capabilities:</strong> Multimodal, Function Calling, Multilingual (11 languages)</li>
+                </ul>
+                <p class="summary">
+                    Mistral Small 3.1 redefines efficiency in AI. Despite being a "small" model, it competes head-to-head with Llama 3.3 70B and Qwen 32B while running 3x faster. Its Apache 2.0 license and ability to run on a single RTX 4090 make it perfect for local deployment.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Use the official <code>mistralai</code> Python client or OpenAI-compatible API.</p>
+                <div class="code-block">
+                    <div class="code-header">Python</div>
+                    <pre><code class="language-python">from mistralai import Mistral
+
+client = Mistral(api_key="YOUR_API_KEY")
+
+response = client.chat.complete(
+    model="mistral-small-latest",
+    messages=[
+        {
+            "role": "user",
+            "content": "Write a haiku about efficient AI models."
+        }
+    ]
+)
+
+print(response.choices[0].message.content)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Edge Deployment</h3>
+                        <p>Runs efficiently on consumer GPUs (RTX 4090) or Macs with 32GB RAM, ideal for on-premise solutions.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Real-time Applications</h3>
+                        <p>150 tokens/second inference speed enables responsive chatbots and live assistance systems.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Document Processing</h3>
+                        <p>Multimodal capabilities (v3.1) support document verification, image analysis, and visual diagnostics.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
