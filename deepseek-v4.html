@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek V4.1-Flash Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into DeepSeek V4.1-Flash: 552B MoE with Causal Encoder-Decoder architecture, 1M context, and breakthrough KV cache compression.">
+    <meta property="og:title" content="DeepSeek V4.1-Flash Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into DeepSeek V4.1-Flash: Pushing the limits of KV cache compression and long-horizon reasoning.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/deepseek-v4.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge deepseek">DeepSeek AI</span>
+            <h1>DeepSeek V4.1-Flash</h1>
+            <p class="subtitle">Pushing the limits of KV cache compression with Causal Encoder-Decoder architecture and 1M context support.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> DeepSeek AI</li>
+                    <li><strong>Release Date:</strong> September 2026</li>
+                    <li><strong>Parameters:</strong> 552B Backbone (8B active during prefill, 16B during decode)</li>
+                    <li><strong>Architecture:</strong> Causal Encoder-Decoder (CED) + Compressed Sparse Attention 2 (CSA2)</li>
+                    <li><strong>Context Window:</strong> 1,000,000 tokens (1M tokens)</li>
+                    <li><strong>License:</strong> MIT License</li>
+                    <li><strong>Key Capabilities:</strong> 1/8 Persistent KV Footprint, Native Multimodal (Vision+Text), Ultra-Low Latency Agentic Prefill</li>
+                </ul>
+                <p class="summary">
+                    DeepSeek-V4.1-Flash introduces a revolutionary Causal Encoder-Decoder (CED) architecture organized as a 20-layer causal encoder followed by a 20-layer decoder. By projecting the decoder's global KV cache from the final encoder hidden states, the model activates only 8B parameters per token during prefill and 16B during decode. Combined with SWA Bounded Replay, it slashes the persistent KV cache footprint to roughly 1/8th of conventional architectures, unlocking blazingly fast inference on massive document inputs.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Deploy DeepSeek-V4.1-Flash locally or connect via the OpenAI-compatible API endpoint.</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Python</span></div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_id = "deepseek-ai/DeepSeek-V4.1-Flash"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+
+prompt = "Explain how the Causal Encoder-Decoder (CED) structure optimizes KV memory during 1M token prefill."
+messages = [
+    {"role": "system", "content": "You are DeepSeek-V4.1, an ultra-fast agentic reasoning model."},
+    {"role": "user", "content": prompt}
+]
+
+inputs = tokenizer.apply_chat_template(
+    messages,
+    return_tensors="pt",
+    add_generation_prompt=True
+).to(model.device)
+
+outputs = model.generate(
+    inputs,
+    max_new_tokens=512,
+    temperature=0.6
+)
+
+response = tokenizer.decode(outputs[0][inputs.shape[1]:], skip_special_tokens=True)
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Input-Heavy Agentic Workflows</h3>
+                        <p>8B active prefill enables near-instant ingestion of massive API docs, conversation transcripts, and codebases at minimal GPU cost.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>High-Throughput Production Serving</h3>
+                        <p>1/8th KV cache footprint enables 8x higher concurrent batch sizes on standard NVIDIA H100/H200/B200 clusters.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Unrestricted Commercial Adoption</h3>
+                        <p>Released under the permissive MIT license, giving startups and global enterprises complete ownership of self-hosted infrastructure.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

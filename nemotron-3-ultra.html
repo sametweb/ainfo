@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA Nemotron-3-Ultra Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into NVIDIA Nemotron-3-Ultra: 550B LatentMoE Mamba-2 hybrid with 1M context, Multi-Token Prediction (MTP), and enterprise reasoning.">
+    <meta property="og:title" content="NVIDIA Nemotron-3-Ultra Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into NVIDIA Nemotron-3-Ultra: Hybrid Mamba-2 + MoE architecture with 1M tokens.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/nemotron-3-ultra.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge nvidia">NVIDIA</span>
+            <h1>Nemotron-3-Ultra</h1>
+            <p class="subtitle">NVIDIA's frontier 550B LatentMoE Mamba-2 hybrid with 1M context, Multi-Token Prediction, and high-stakes reasoning.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> NVIDIA</li>
+                    <li><strong>Release Date:</strong> June 2026</li>
+                    <li><strong>Parameters:</strong> 550B Total (55B active per token)</li>
+                    <li><strong>Architecture:</strong> LatentMoE - Mamba-2 + MoE + Transformer Hybrid with Multi-Token Prediction (MTP)</li>
+                    <li><strong>Context Window:</strong> 1,000,000 tokens (1M native)</li>
+                    <li><strong>License:</strong> OpenMDW License v1.1 (Open Weights)</li>
+                    <li><strong>Key Capabilities:</strong> Linear-Time State Space Attention, High-Stakes RAG, Thinking Mode (`enable_thinking=True`), Complex Enterprise Agent Workflows</li>
+                </ul>
+                <p class="summary">
+                    Nemotron-3-Ultra represents NVIDIA's groundbreaking architecture combining state-space models (Mamba-2) with sparse LatentMoE and Multi-Token Prediction (MTP). By replacing quadratic attention layers with linear state-space operators in alternating blocks, Nemotron-3-Ultra achieves unprecedented inference speed across 1-million-token contexts while maintaining the highest frontier accuracy in enterprise reasoning, tool use, and multi-document RAG.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run Nemotron-3-Ultra using Hugging Face <code>transformers</code> or NVIDIA TensorRT-LLM.</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Python</span></div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_id = "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.bfloat16,
+    device_map="auto"
+)
+
+messages = [
+    {"role": "system", "content": "You are Nemotron-3-Ultra, NVIDIA's frontier enterprise agent model."},
+    {"role": "user", "content": "Formulate a zero-hallucination document synthesis pipeline across 500k context tokens."}
+]
+
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
+    enable_thinking=True
+)
+
+inputs = tokenizer([text], return_tensors="pt").to(model.device)
+outputs = model.generate(**inputs, max_new_tokens=512)
+
+response = tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Million-Token Enterprise RAG</h3>
+                        <p>Hybrid Mamba-2 architecture allows sustained 1M context evaluation with linear memory scaling and zero quadratic slowdown.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Multi-Token Prediction Throughput</h3>
+                        <p>MTP delivers up to 2.5x generation speedups, drastically cutting inference latency in interactive developer environments.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Autonomous Enterprise Agents</h3>
+                        <p>Designed for mission-critical orchestration, executing multi-step tool calls, compliance audits, and security validation.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

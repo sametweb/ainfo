@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMax M3 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into MiniMax M3: Omnimodal MoE model with native text, vision, audio, and video capabilities, 1M context, and top SWE-bench scores.">
+    <meta property="og:title" content="MiniMax M3 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into MiniMax M3: Omnimodal MoE with 1M context and elite coding benchmarks.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/minimax-m3.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge minimax">MiniMax</span>
+            <h1>MiniMax M3</h1>
+            <p class="subtitle">The omnimodal MoE titan with native video, image, audio, and text comprehension, paired with a 1M token context.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> MiniMax AI</li>
+                    <li><strong>Release Date:</strong> 2026</li>
+                    <li><strong>Architecture:</strong> Omnimodal Mixture-of-Experts (MoE) with Adaptive Thinking</li>
+                    <li><strong>Context Window:</strong> 1,000,000 tokens (1M context)</li>
+                    <li><strong>License:</strong> MiniMax Community Open License</li>
+                    <li><strong>Key Capabilities:</strong> Video Understanding, Multimodal Agent Workflows, SWE-bench Verified Coding, Native Function Calling</li>
+                </ul>
+                <p class="summary">
+                    MiniMax M3 is MiniMax's landmark open-weights release, delivering unified omnimodal processing across text, images, audio, and extended video files. Built with sparse MoE routing and an adaptive reasoning engine, M3 achieves top scores on SWE-bench Verified and competitive coding leaderboards while retaining high-efficiency inference. Its native XML tool calling schema allows reliable invocation of external APIs and robotic tools.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run MiniMax M3 locally using Hugging Face <code>transformers</code>.</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Python</span></div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_id = "MiniMaxAI/MiniMax-M3"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+
+prompt = "Analyze this system log snippet and write an automated diagnostic script."
+messages = [
+    {"role": "system", "content": "You are MiniMax-M3, an omnimodal reasoning and coding model."},
+    {"role": "user", "content": prompt}
+]
+
+inputs = tokenizer.apply_chat_template(
+    messages,
+    return_tensors="pt",
+    add_generation_prompt=True
+).to(model.device)
+
+outputs = model.generate(
+    inputs,
+    max_new_tokens=512,
+    temperature=0.6
+)
+
+response = tokenizer.decode(outputs[0][inputs.shape[1]:], skip_special_tokens=True)
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Full-Length Video Analysis</h3>
+                        <p>Processes hour-long instructional videos, gameplay recordings, and surveillance footage to extract precise timestamps and semantic summaries.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Autonomous SWE-bench Coding</h3>
+                        <p>Strong agentic code generation and git patch synthesis capable of resolving real-world GitHub issues with zero manual intervention.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Interactive Multi-Agent Scaffolds</h3>
+                        <p>Seamless tool invocation using structured XML syntax guarantees high execution reliability in multi-agent orchestration frameworks.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

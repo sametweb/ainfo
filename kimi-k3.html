@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi K3 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Moonshot AI Kimi K3: World's first open 3T-class model (2.8T MoE) with 1M context, KDA attention, and long-horizon engineering capability.">
+    <meta property="og:title" content="Kimi K3 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Kimi K3: The 2.8T-parameter open-weights frontier model for autonomous engineering.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/kimi-k3.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge moonshot">Moonshot AI</span>
+            <h1>Kimi K3</h1>
+            <p class="subtitle">The world's first open 3T-class model (2.8T MoE), engineered for autonomous long-horizon coding, CAD, and deep research.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Moonshot AI</li>
+                    <li><strong>Release Date:</strong> 2026</li>
+                    <li><strong>Parameters:</strong> 2.8 Trillion Total (16 active out of 896 LatentMoE experts)</li>
+                    <li><strong>Context Window:</strong> 1,000,000 tokens (1M native)</li>
+                    <li><strong>Architecture:</strong> Kimi Delta Attention (KDA) + Attention Residuals (AttnRes)</li>
+                    <li><strong>License:</strong> Kimi Community Open-Weights License</li>
+                    <li><strong>Key Capabilities:</strong> Autonomous Multi-Hour Coding, GPU Kernel Optimization, CAD/Chip Design, Vision-in-the-Loop</li>
+                </ul>
+                <p class="summary">
+                    Kimi K3 redefines what open weights can achieve by scaling to 2.8 trillion total parameters with high MoE sparsity. Utilizing Kimi Delta Attention (KDA) and Attention Residuals, it achieves a 2.5× scaling efficiency advantage over previous generations. Operating with minimal human oversight, Kimi K3 sustains multi-hour terminal sessions, navigates massive mono-repos, and synthesizes interactive research widgets and full software architectures.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run inference with Kimi K3 using Hugging Face <code>transformers</code> or compatible MoE backends.</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Python</span></div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_id = "moonshotai/Kimi-K3"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+
+prompt = "Write an optimized Triton kernel for flash cross-attention with causal masking."
+messages = [
+    {"role": "system", "content": "You are Kimi K3, an expert autonomous engineering agent."},
+    {"role": "user", "content": prompt}
+]
+
+inputs = tokenizer.apply_chat_template(
+    messages,
+    return_tensors="pt",
+    add_generation_prompt=True
+).to(model.device)
+
+outputs = model.generate(
+    inputs,
+    max_new_tokens=1024,
+    temperature=0.7
+)
+
+response = tokenizer.decode(outputs[0][inputs.shape[1]:], skip_special_tokens=True)
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Deep Engineering Sessions</h3>
+                        <p>Navigates million-line codebases, orchestrates terminal commands, and resolves complex compiler errors without human intervention.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Hardware & Chip Design</h3>
+                        <p>Specialized domain fine-tuning enables Verilog generation, synthesis constraint verification, and CAD workflow automation.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Interactive Knowledge Dashboards</h3>
+                        <p>Synthesizes comprehensive multi-domain analyses complete with executable widgets, data visualizations, and formal reports.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

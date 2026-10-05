@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM-5.3 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Zhipu AI GLM-5.3: Reigning open-weight SOTA in coding and agentic terminal execution, CyberGym vulnerability discovery, and 1M context.">
+    <meta property="og:title" content="GLM-5.3 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into GLM-5.3: The premier open-weights model for autonomous coding, cybersecurity, and terminal agent workflows.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/glm-5-3.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge zhipu">Zhipu AI / Z.ai</span>
+            <h1>GLM-5.3</h1>
+            <p class="subtitle">The reigning open-weights champion in coding, agentic terminal workflows, and cybersecurity intelligence.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Zhipu AI (Z.ai)</li>
+                    <li><strong>Release Date:</strong> September 2026</li>
+                    <li><strong>Architecture:</strong> Sparse Attention MoE Transformer with Post-Training Scaling</li>
+                    <li><strong>Context Window:</strong> 1,000,000 tokens (1M tokens)</li>
+                    <li><strong>License:</strong> GLM Community Open License / Apache 2.0 (Flash variants)</li>
+                    <li><strong>Key Capabilities:</strong> Terminal Bench 3.0 SOTA, CyberGym Security Analysis, Code Generation, 1M Context</li>
+                </ul>
+                <p class="summary">
+                    GLM-5.3 pushes post-training scaling to new heights, delivering a 50% improvement over GLM-5.2 on in-house coding evaluations and achieving open-source state-of-the-art on Terminal Bench 3.0 and Agents' Last Exam. Furthermore, scaled post-training unlocks emergent cyber capabilities, making GLM-5.3 the world leader on CyberGym for vulnerability discovery, automated exploitation defense, and multi-step security patching.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run GLM-5.3 locally with Hugging Face <code>transformers</code>.</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Python</span></div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_id = "zai-org/GLM-5.3"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+
+prompt = "Audit this system architecture for concurrent race conditions and write an automated test to reproduce the issue."
+messages = [
+    {"role": "system", "content": "You are GLM-5.3, an expert autonomous terminal coding agent."},
+    {"role": "user", "content": prompt}
+]
+
+inputs = tokenizer.apply_chat_template(
+    messages,
+    return_tensors="pt",
+    add_generation_prompt=True
+).to(model.device)
+
+outputs = model.generate(
+    inputs,
+    max_new_tokens=1024,
+    temperature=0.5
+)
+
+response = tokenizer.decode(outputs[0][inputs.shape[1]:], skip_special_tokens=True)
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Autonomous Terminal Agents</h3>
+                        <p>Dominates Terminal Bench 3.0, navigating bash shells, running linters, inspecting runtime traces, and executing git operations.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Cybersecurity & Vulnerability Audit</h3>
+                        <p>State-of-the-art detection on CyberGym benchmarks, identifying memory corruption, logic flaws, and supply chain security gaps.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Long-Horizon Enterprise Codebases</h3>
+                        <p>1M context allows entire monorepos and build dependency graphs to be digested in a single zero-shot analytical pass.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

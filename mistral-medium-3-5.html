@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistral Medium 3.5 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Mistral Medium 3.5: 128B dense parameter model with 256k context, multimodal vision, toggleable reasoning mode, and native tool calling.">
+    <meta property="og:title" content="Mistral Medium 3.5 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Mistral Medium 3.5: Dense 128B multimodal powerhouse with configurable reasoning.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/mistral-medium-3-5.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge mistral">Mistral AI</span>
+            <h1>Mistral Medium 3.5</h1>
+            <p class="subtitle">The dense 128B parameter powerhouse offering configurable reasoning effort, native vision, and 256k context window.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Mistral AI</li>
+                    <li><strong>Release Date:</strong> 2026</li>
+                    <li><strong>Architecture:</strong> Dense 128B Parameters Transformer with Multimodal Vision Encoder</li>
+                    <li><strong>Context Window:</strong> 256,000 tokens (256k context)</li>
+                    <li><strong>License:</strong> Modified MIT License (Permissive commercial & non-commercial use)</li>
+                    <li><strong>Key Capabilities:</strong> Dual Mode (Instant vs. Reasoning), Image Understanding, First-Class Function Calling, Structured JSON Output</li>
+                </ul>
+                <p class="summary">
+                    Mistral Medium 3.5 represents Mistral's flagship dense architecture. Built with 128 billion dense parameters, it pairs raw parameter capacity with the agility to switch seamlessly between sub-second conversational replies and deep test-time reasoning. With multimodal input support, a 256k context window, and industry-standard tool calling accuracy, it provides an exceptional backbone for production agent services.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run Mistral Medium 3.5 using <code>vLLM</code> or the official Mistral inference stack.</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Python</span></div>
+                    <pre><code class="language-python">from vllm import LLM, SamplingParams
+
+model_name = "mistralai/Mistral-Medium-3.5-128B"
+
+# Initialize vLLM with tensor parallelism across GPUs
+llm = LLM(
+    model=model_name,
+    tensor_parallel_size=4,
+    max_model_len=32768
+)
+
+sampling_params = SamplingParams(
+    max_tokens=1024,
+    temperature=0.7
+)
+
+prompt = "You are a senior system architect. Design an event-driven distributed pipeline for high-frequency telemetry."
+outputs = llm.generate([prompt], sampling_params)
+
+for output in outputs:
+    print(output.outputs[0].text)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Dynamic Latency Scaling</h3>
+                        <p>Switch between zero-overhead instantaneous chat responses and multi-minute chain-of-thought reasoning depending on task complexity.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Production Agent Pipelines</h3>
+                        <p>Best-in-class JSON schema adherence and native tool calling eliminate parsing errors when driving automated backend APIs.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Document & Visual Auditing</h3>
+                        <p>256k context combined with vision enables auditing long regulatory PDFs, financial prospectuses, and multi-page schematics.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

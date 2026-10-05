@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen 3.8 Details - Top Open Source LLM | ainfo.dev</title>
+    <meta name="description" content="Deep dive into Qwen 3.8: Alibaba Cloud's native vision-language model with dynamic thinking control, 119+ languages, and 1M context.">
+    <meta property="og:title" content="Qwen 3.8 Details - Top Open Source LLM">
+    <meta property="og:description" content="Deep dive into Qwen 3.8: Alibaba's frontier multimodal model with flexible reasoning effort and Apache 2.0 license.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ainfo.dev/qwen-3-8.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ainfo.dev</a>
+        </nav>
+    </header>
+
+    <main class="container detail-page">
+        <a href="index.html" class="back-link">← Back to Top 10</a>
+        
+        <section class="hero-detail">
+            <span class="badge qwen">Alibaba Cloud</span>
+            <h1>Qwen 3.8</h1>
+            <p class="subtitle">The multimodal reasoning titan featuring configurable thinking modes, native image & video comprehension, and 119+ languages.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="info-card">
+                <h2>Generic Info</h2>
+                <ul class="specs-list">
+                    <li><strong>Publisher:</strong> Alibaba Cloud</li>
+                    <li><strong>Release Date:</strong> 2026</li>
+                    <li><strong>Model Family:</strong> Dense (Qwen3.8-27B) through flagship MoE (Qwen3.8-Max)</li>
+                    <li><strong>Context Window:</strong> 128K standard, extendable up to 1,000,000 tokens (1M context)</li>
+                    <li><strong>License:</strong> Apache 2.0</li>
+                    <li><strong>Key Capabilities:</strong> Native Image/Video Understanding, Flexible Thinking Control (`xhigh`, `medium`, `low`), 119 Languages, Built-in Tool Calling</li>
+                </ul>
+                <p class="summary">
+                    Building on the massive global adoption of the Qwen series, Qwen 3.8 is the most capable generation in the family to date. Engineered as a native vision-language model, Qwen 3.8 understands complex diagrams, multi-frame video, and dense multilingual text. Its revolutionary thinking control allows developers to dial the reasoning effort from low latency up to "xhigh" for deep mathematical proofs, competitive programming, and long-horizon tool execution.
+                </p>
+            </section>
+
+            <section class="info-card">
+                <h2>Hello World Guide</h2>
+                <p>Run Qwen 3.8 locally with Hugging Face <code>transformers</code> or <code>vLLM</code>.</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Python</span></div>
+                    <pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_id = "Qwen/Qwen3.8-27B"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype="auto",
+    device_map="auto"
+)
+
+messages = [
+    {"role": "system", "content": "You are a helpful assistant with deep reasoning and tool use capabilities."},
+    {"role": "user", "content": "Prove that the square root of 2 is irrational, providing step-by-step mathematical rigor."}
+]
+
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
+    enable_thinking=True,      # Toggle thinking mode
+    reasoning_effort="xhigh"   # Options: 'xhigh', 'medium', 'low'
+)
+
+model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
+generated_ids = model.generate(
+    **model_inputs,
+    max_new_tokens=1024
+)
+
+response = tokenizer.decode(generated_ids[0][model_inputs.input_ids.shape[1]:], skip_special_tokens=True)
+print(response)
+</code></pre>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Industry Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3>Multilingual Global Deployments</h3>
+                        <p>High-fidelity support for 119+ languages makes Qwen 3.8 the premier model for international enterprise customer service and localization.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>Native Vision & Video Analysis</h3>
+                        <p>Processes real-time video frames, financial charts, and UI mockups natively without separate OCR or vision adapter bottlenecks.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h3>True Open-Source Ecosystem</h3>
+                        <p>Under the Apache 2.0 license, developers can freely build commercial products, embed models in edge devices, and distribute derivatives.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> ainfo.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

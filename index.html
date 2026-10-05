@@ -3,29 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Top 10 Open Source LLMs (2025/2026) | ainfo.dev</title>
+    <title>Top 10 Open Source LLMs (Late 2026) | ainfo.dev</title>
     <meta
       name="description"
-      content="Discover the best open source Large Language Models (LLMs) of 2025 and 2026. Comprehensive list including Llama 4, DeepSeek V3.2, Qwen 3, and more."
+      content="Discover the best open source and open weight Large Language Models (LLMs) of 2026. Ranked benchmark comparison including MiMo-V2.6-Pro, Kimi K3, DeepSeek V4.1, GLM-5.3, Qwen 3.8, and more."
     />
     <meta
       name="keywords"
-      content="Open Source LLM, AI Models, Llama 4, DeepSeek, Mistral, Qwen 3, Gemma 3, Artificial Intelligence, Best LLMs 2026"
+      content="Open Source LLM, Open Weights 2026, MiMo-V2.6-Pro, Kimi K3, DeepSeek V4, GLM-5.3, Qwen 3.8, Llama 4, Mistral Medium 3.5, Nemotron-3-Ultra, MiniMax M3, GPT-OSS"
     />
     <meta
       property="og:title"
-      content="Top 10 Open Source LLMs (2025/2026)"
+      content="Top 10 Open Source LLMs (Late 2026)"
     />
     <meta
       property="og:description"
-      content="The definitive guide to the best open source AI models available right now."
+      content="The definitive guide to the highest performing open source and open weight AI models available right now."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ainfo.dev" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -35,192 +35,310 @@
 
     <header>
       <nav class="container">
-        <div class="logo">ainfo.dev</div>
-        <!-- Future nav links can go here -->
+        <a href="index.html" class="logo">ainfo.dev</a>
       </nav>
       <div class="hero container">
+        <div class="last-updated-badge">
+          <span class="pulse-dot"></span>
+          <span>Updated for Late 2026 • Verified on Independent Benchmarks</span>
+        </div>
         <h1>Top 10 Open Source LLMs</h1>
         <p class="subtitle">
-          The most powerful, efficient, and capable open-weight models defining
-          the AI landscape in 2025 and 2026.
+          The most capable, efficient, and innovative open-weight models defining
+          the frontier AI ecosystem in late 2026.
         </p>
+
+        <!-- Search input -->
+        <div class="search-input-wrapper">
+          <input
+            type="text"
+            id="model-search"
+            class="search-input"
+            placeholder="Search models, capabilities, architectures..."
+            aria-label="Search models"
+          />
+        </div>
+
+        <!-- Filter category chips -->
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">All Models</button>
+          <button class="filter-btn" data-filter="moe">Frontier MoE</button>
+          <button class="filter-btn" data-filter="reasoning">Reasoning &amp; Coding</button>
+          <button class="filter-btn" data-filter="multimodal">Multimodal</button>
+          <button class="filter-btn" data-filter="long-context">1M+ Context</button>
+        </div>
       </div>
     </header>
 
     <main class="container">
       <div class="llm-grid">
-        <!-- 1. Llama 4 -->
-        <a href="llama-4.html" class="llm-card-link">
+        <!-- 1. MiMo-V2.6-Pro-RL -->
+        <a href="mimo-v2-6.html" class="llm-card-link" data-category="moe reasoning multimodal long-context">
           <article class="llm-card">
             <div class="card-header">
               <span class="rank">#1</span>
-              <h2>Llama 4</h2>
-              <span class="badge meta">Meta AI</span>
+              <h2>MiMo-V2.6-Pro-RL</h2>
+              <span class="badge xiaomi">Xiaomi MiMo</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Context:</strong> 1M Tokens</span>
+              <span class="spec-pill"><strong>Arch:</strong> Omnimodal MoE</span>
+              <span class="spec-pill"><strong>License:</strong> MIT</span>
             </div>
             <p class="description">
-              The multimodal MoE powerhouse. Llama 4 Scout offers an unprecedented
-              10M token context, while Maverick delivers GPT-4o class performance.
-              Native image + text understanding sets the new open-source standard.
+              The reigning #1 open-weight model on global intelligence benchmarks.
+              Unified asynchronous RL scaling across coding, visual workflows, and cybersecurity,
+              bolstered by Groupwise Agentic Grading for recursive self-improvement.
             </p>
             <div class="tags">
-              <span>Multimodal</span>
-              <span>10M Context</span>
-              <span>MoE Architecture</span>
+              <span>Omnimodal</span>
+              <span>1M Context</span>
+              <span>RL Scaled</span>
+              <span>MIT License</span>
             </div>
           </article>
         </a>
 
-        <!-- 2. DeepSeek V3.2 -->
-        <a href="deepseek-v3.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#2</span>
-                    <h2>DeepSeek V3.2</h2>
-                    <span class="badge deepseek">DeepSeek AI</span>
-                </div>
-                <p class="description">GPT-5 level reasoning at 100x lower cost. DeepSeek V3.2-Speciale achieves gold-medal performance in IMO, IOI, and ICPC 2025. The new Sparse Attention mechanism revolutionizes long-context efficiency.</p>
-                <div class="tags">
-                    <span>Reasoning</span>
-                    <span>Coding</span>
-                    <span>Math Olympics</span>
-                </div>
-            </article>
+        <!-- 2. Kimi K3 -->
+        <a href="kimi-k3.html" class="llm-card-link" data-category="moe reasoning long-context">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#2</span>
+              <h2>Kimi K3</h2>
+              <span class="badge moonshot">Moonshot AI</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Params:</strong> 2.8T (16 Active)</span>
+              <span class="spec-pill"><strong>Context:</strong> 1M Tokens</span>
+              <span class="spec-pill"><strong>Attention:</strong> KDA + AttnRes</span>
+            </div>
+            <p class="description">
+              The world's first open 3T-class model. 2.8 trillion parameters with extreme MoE
+              sparsity, capable of sustaining multi-hour autonomous engineering sessions,
+              GPU kernel optimization, CAD design, and interactive scientific research.
+            </p>
+            <div class="tags">
+              <span>2.8T MoE</span>
+              <span>Autonomous Coding</span>
+              <span>1M Context</span>
+              <span>CAD &amp; Chip Design</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 3. Mistral Small 3.1 -->
-        <a href="mistral-small-3.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#3</span>
-                    <h2>Mistral Small 3.1</h2>
-                    <span class="badge mistral">Mistral AI</span>
-                </div>
-                <p class="description">The efficiency king. 24B parameters that outperform 70B models while running 3x faster. Apache 2.0 licensed, multimodal, and runs on a single RTX 4090 or Mac with 32GB RAM.</p>
-                <div class="tags">
-                    <span>Efficient</span>
-                    <span>Apache 2.0</span>
-                    <span>Multimodal</span>
-                </div>
-            </article>
+        <!-- 3. DeepSeek V4.1-Flash -->
+        <a href="deepseek-v4.html" class="llm-card-link" data-category="moe reasoning long-context">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#3</span>
+              <h2>DeepSeek V4.1-Flash</h2>
+              <span class="badge deepseek">DeepSeek AI</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Params:</strong> 552B (8B/16B Active)</span>
+              <span class="spec-pill"><strong>Context:</strong> 1M Tokens</span>
+              <span class="spec-pill"><strong>License:</strong> MIT</span>
+            </div>
+            <p class="description">
+              Pushing the limits of KV cache compression. Its Causal Encoder-Decoder (CED)
+              architecture activates only 8B parameters during prefill, reducing persistent
+              KV memory to 1/8th of standard baselines for lightning-fast long-context inference.
+            </p>
+            <div class="tags">
+              <span>CED Arch</span>
+              <span>KV Compression</span>
+              <span>1M Context</span>
+              <span>MIT License</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 4. Qwen 3 -->
-        <a href="qwen-3.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#4</span>
-                    <h2>Qwen 3</h2>
-                    <span class="badge qwen">Alibaba Cloud</span>
-                </div>
-                <p class="description">The multilingual reasoning master. Qwen 3's hybrid "thinking" mode rivals o1-level reasoning, while supporting 119 languages. Context extends to 1M+ tokens for massive document analysis.</p>
-                <div class="tags">
-                    <span>119 Languages</span>
-                    <span>Thinking Mode</span>
-                    <span>1M+ Context</span>
-                </div>
-            </article>
+        <!-- 4. GLM-5.3 -->
+        <a href="glm-5-3.html" class="llm-card-link" data-category="moe reasoning long-context">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#4</span>
+              <h2>GLM-5.3</h2>
+              <span class="badge zhipu">Zhipu AI / Z.ai</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Context:</strong> 1M Tokens</span>
+              <span class="spec-pill"><strong>Benchmark:</strong> Terminal Bench SOTA</span>
+              <span class="spec-pill"><strong>Domain:</strong> Cyber &amp; Coding</span>
+            </div>
+            <p class="description">
+              The reigning open-source champion for coding and agentic terminal execution.
+              Achieves open SOTA on Terminal Bench 3.0 and CyberGym, with massive gains in
+              automated vulnerability discovery, exploitation defense, and system auditing.
+            </p>
+            <div class="tags">
+              <span>Terminal Bench SOTA</span>
+              <span>CyberGym</span>
+              <span>Agentic Coding</span>
+              <span>1M Context</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 5. GPT-OSS -->
-        <a href="gpt-oss.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#5</span>
-                    <h2>GPT-OSS</h2>
-                    <span class="badge openai">OpenAI</span>
-                </div>
-                <p class="description">OpenAI's entry into open weights. The 120B parameter MoE model (5.1B active) is optimized for agentic workflows with native tool use, running on a single H100 GPU.</p>
-                <div class="tags">
-                    <span>Agentic</span>
-                    <span>Apache 2.0</span>
-                    <span>Tool Use</span>
-                </div>
-            </article>
+        <!-- 5. Qwen 3.8 -->
+        <a href="qwen-3-8.html" class="llm-card-link" data-category="multimodal reasoning long-context">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#5</span>
+              <h2>Qwen 3.8</h2>
+              <span class="badge qwen">Alibaba Cloud</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Family:</strong> 27B Dense to Max MoE</span>
+              <span class="spec-pill"><strong>Context:</strong> Up to 1M Tokens</span>
+              <span class="spec-pill"><strong>License:</strong> Apache 2.0</span>
+            </div>
+            <p class="description">
+              Multimodal reasoning powerhouse featuring native vision and video understanding
+              with dynamic thinking control (`xhigh`, `medium`, `low`). Backed by support for
+              119+ languages and an unencumbered Apache 2.0 open license.
+            </p>
+            <div class="tags">
+              <span>Thinking Mode</span>
+              <span>119 Languages</span>
+              <span>Vision &amp; Video</span>
+              <span>Apache 2.0</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 6. Gemma 3 -->
-        <a href="gemma-3.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#6</span>
-                    <h2>Gemma 3</h2>
-                    <span class="badge google">Google</span>
-                </div>
-                <p class="description">Google's multimodal open gem. Native image + text understanding with 140+ language support. The 27B model runs on consumer GPUs while rivaling much larger models.</p>
-                <div class="tags">
-                    <span>Multimodal</span>
-                    <span>140+ Languages</span>
-                    <span>Consumer GPU</span>
-                </div>
-            </article>
+        <!-- 6. Llama 4 -->
+        <a href="llama-4.html" class="llm-card-link" data-category="moe multimodal long-context">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#6</span>
+              <h2>Llama 4</h2>
+              <span class="badge meta">Meta AI</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Variants:</strong> Scout &amp; Maverick</span>
+              <span class="spec-pill"><strong>Context:</strong> Up to 10M Tokens</span>
+              <span class="spec-pill"><strong>Arch:</strong> Multimodal MoE</span>
+            </div>
+            <p class="description">
+              Meta's multimodal MoE flagship. Llama 4 Scout offers an unprecedented 10M
+              token context window for entire multi-repository analysis, while Maverick
+              delivers frontier reasoning and native image understanding.
+            </p>
+            <div class="tags">
+              <span>10M Context</span>
+              <span>Multimodal MoE</span>
+              <span>Enterprise Ready</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 7. Phi-4 -->
-        <a href="phi-4.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#7</span>
-                    <h2>Phi-4</h2>
-                    <span class="badge microsoft">Microsoft</span>
-                </div>
-                <p class="description">Small but mighty. Phi-4 punches way above its weight class, delivering exceptional reasoning and coding capabilities that run efficiently on consumer hardware.</p>
-                <div class="tags">
-                    <span>Small Language Model</span>
-                    <span>On-Device</span>
-                    <span>Coding</span>
-                </div>
-            </article>
+        <!-- 7. Mistral Medium 3.5 -->
+        <a href="mistral-medium-3-5.html" class="llm-card-link" data-category="multimodal reasoning">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#7</span>
+              <h2>Mistral Medium 3.5</h2>
+              <span class="badge mistral">Mistral AI</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Params:</strong> 128B Dense</span>
+              <span class="spec-pill"><strong>Context:</strong> 256k Tokens</span>
+              <span class="spec-pill"><strong>License:</strong> Modified MIT</span>
+            </div>
+            <p class="description">
+              The dense 128B parameter powerhouse. Features toggleable instant versus deep
+              reasoning modes, multimodal vision processing, and enterprise-grade native
+              function calling with strict JSON schema guarantees.
+            </p>
+            <div class="tags">
+              <span>128B Dense</span>
+              <span>Dual Reasoning</span>
+              <span>Vision</span>
+              <span>Function Calling</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 8. Grok-1 -->
-        <a href="grok-1.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#8</span>
-                    <h2>Grok-1</h2>
-                    <span class="badge xai">xAI</span>
-                </div>
-                <p class="description">The massive MoE. With 314B parameters, Grok-1 is a beast of a model known for its "spicy" personality and strong general knowledge. A unique option for those with the compute.</p>
-                <div class="tags">
-                    <span>314B Parameters</span>
-                    <span>MoE</span>
-                    <span>Creative</span>
-                </div>
-            </article>
+        <!-- 8. NVIDIA Nemotron-3-Ultra -->
+        <a href="nemotron-3-ultra.html" class="llm-card-link" data-category="moe reasoning long-context">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#8</span>
+              <h2>Nemotron-3-Ultra</h2>
+              <span class="badge nvidia">NVIDIA</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Params:</strong> 550B (55B Active)</span>
+              <span class="spec-pill"><strong>Arch:</strong> Mamba-2 + LatentMoE</span>
+              <span class="spec-pill"><strong>Context:</strong> 1M Tokens</span>
+            </div>
+            <p class="description">
+              Frontier hybrid architecture combining Mamba-2 state space operators with
+              LatentMoE and Multi-Token Prediction (MTP). Delivers blazing linear inference
+              throughput across 1M context tokens for mission-critical enterprise RAG.
+            </p>
+            <div class="tags">
+              <span>Mamba-2 Hybrid</span>
+              <span>Multi-Token Prediction</span>
+              <span>1M Context</span>
+              <span>Enterprise RAG</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 9. Yi-1.5 -->
-        <a href="yi-1-5.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#9</span>
-                    <h2>Yi-1.5</h2>
-                    <span class="badge yi">01.AI</span>
-                </div>
-                <p class="description">A strong bilingual contender. Yi-1.5 (34B) offers a great balance of performance and size, excelling in both English and Chinese tasks with improved coding skills.</p>
-                <div class="tags">
-                    <span>Bilingual</span>
-                    <span>34B Parameters</span>
-                    <span>Balanced</span>
-                </div>
-            </article>
+        <!-- 9. MiniMax M3 -->
+        <a href="minimax-m3.html" class="llm-card-link" data-category="moe multimodal reasoning long-context">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#9</span>
+              <h2>MiniMax M3</h2>
+              <span class="badge minimax">MiniMax</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Context:</strong> 1M Tokens</span>
+              <span class="spec-pill"><strong>Benchmark:</strong> Top SWE-bench</span>
+              <span class="spec-pill"><strong>Modalities:</strong> Video + Audio + Text</span>
+            </div>
+            <p class="description">
+              An omnimodal MoE titan with native understanding of hour-long video, high-resolution
+              imagery, audio, and text. Delivers top SWE-bench Verified coding scores and
+              robust XML tool invocation for autonomous multi-agent scaffolds.
+            </p>
+            <div class="tags">
+              <span>Video Native</span>
+              <span>SWE-bench Verified</span>
+              <span>1M Context</span>
+              <span>Omnimodal</span>
+            </div>
+          </article>
         </a>
 
-        <!-- 10. Command R+ -->
-        <a href="command-r-plus.html" class="llm-card-link">
-            <article class="llm-card">
-                <div class="card-header">
-                    <span class="rank">#10</span>
-                    <h2>Command R+</h2>
-                    <span class="badge cohere">Cohere</span>
-                </div>
-                <p class="description">The RAG specialist. Optimized for retrieval-augmented generation and tool use, Command R+ is the go-to open model for building complex, data-driven enterprise assistants.</p>
-                <div class="tags">
-                    <span>RAG</span>
-                    <span>Enterprise</span>
-                    <span>Tool Use</span>
-                </div>
-            </article>
+        <!-- 10. GPT-OSS -->
+        <a href="gpt-oss.html" class="llm-card-link" data-category="moe reasoning">
+          <article class="llm-card">
+            <div class="card-header">
+              <span class="rank">#10</span>
+              <h2>GPT-OSS</h2>
+              <span class="badge openai">OpenAI</span>
+            </div>
+            <div class="card-specs">
+              <span class="spec-pill"><strong>Params:</strong> 120B (5.1B Active)</span>
+              <span class="spec-pill"><strong>Context:</strong> 128k Tokens</span>
+              <span class="spec-pill"><strong>License:</strong> Apache 2.0</span>
+            </div>
+            <p class="description">
+              OpenAI's milestone entry into open weights. The 120B parameter MoE (with only
+              5.1B active parameters per token) is engineered specifically for agentic
+              workflows, native tool calling, and efficient deployment on single-GPU hardware.
+            </p>
+            <div class="tags">
+              <span>Agentic</span>
+              <span>Single-GPU Deploy</span>
+              <span>Apache 2.0</span>
+              <span>Tool Use</span>
+            </div>
+          </article>
         </a>
       </div>
     </main>
